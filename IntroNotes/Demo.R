@@ -77,3 +77,38 @@ outputs
 Tuesday Wednesday
      75        74
 '''
+
+# Matrices
+
+'''
+- A matrix is a collection of the same data type (numeric, character, logical, 
+  or complex).
+- Matrices in R are column major. 
+- Use the matrix() function to construct a matrix.  
+'''
+v_1 <- 1:9
+m_1 <- matrix(v_1, nrow = 3)
+m_1 # outputs 3x3 matrix of numbers 1-9 in preference of column
+
+# Naming a matrix
+
+row_names <- c("A", "B", "C")
+col_names <- c("X", "Y", "Z")
+dim_names(m_1) <- list(row_names, col_names)
+
+# Factors 
+'''
+- A factor is a statistical data type used to store categorical variables.
+'''
+year_group <- c("Freshmen", "Junior", "Junior", "Senior", "Sophomore")
+factor_year_group <- factor(year_group)
+'''
+output
+
+[1] Freshmen Junior Junior Senior Sophomore
+Levels: Freshmen Junior Senior Sophomore
+'''
+
+SE <- factor_year_group[4]
+SO <- factor_year_group[5]
+SE > SO # outputs [1] TRUE
