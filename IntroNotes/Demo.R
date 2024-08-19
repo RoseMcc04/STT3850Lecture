@@ -112,3 +112,40 @@ Levels: Freshmen Junior Senior Sophomore
 SE <- factor_year_group[4]
 SO <- factor_year_group[5]
 SE > SO # outputs [1] TRUE
+
+# Data Frame
+
+'''
+- Two-dimensional structure with rows (experimental units) and columns (variables)
+- Can be comprised of multiple data types
+- All columns have the same number of rows
+- Rows have unique names
+- Columns are not required to be of the same mode 
+- Another description is a list with a restriction that all components are equal length
+  vectors
+'''
+nv <- c(1, 3, 6, 8)
+cv <- c("a", "v", "f", "p")
+lv <- c(TRUE, FALSE, FALSE, TRUE)
+DF1 <- data.frame(nv, cv, lv)
+DF1 
+
+# Selecting data frame elements
+
+DF1$nv # outputs 1 3 6 8
+DF1$cv # outputs "a" "v" "f" "p"
+DF1$lv[3] # outputs FALSE
+
+DF1[1:2, "nv"] # rows 1 and 2 of column "nv"
+DF1[1:2, 1] # same tjing as before
+DF1[ , "cv"] # all rowds of "cv"
+
+# Using subset
+subset(DF1, subset = lv == TRUE)
+'''
+output
+  nv  cv   lv
+1  1   a TRUE
+4  8   p TRUE
+'''
+DF1[lv == TRUE, ] # does same thing
